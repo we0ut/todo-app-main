@@ -1,0 +1,31 @@
+// Light Theme
+
+// - Very Light Gray: hsl(0, 0%, 98%)
+// - Very Light Grayish Blue: hsl(236, 33%, 92%)
+// - Light Grayish Blue: hsl(233, 11%, 84%)
+// - Dark Grayish Blue: hsl(236, 9%, 61%)
+// - Very Dark Grayish Blue: hsl(235, 19%, 35%)
+
+$color-light-primary-gray-900: hsl(0, 0%, 98%);
+$color-light-primary-gray-700: hsl(236, 33%, 92%);
+$color-light-primary-gray-500: hsl(233, 11%, 84%);
+$color-light-primary-gray-300: hsl(236, 9%, 61%);
+$color-light-primary-gray-100: hsl(235, 19%, 35%);
+
+// Dark Theme
+
+// - Very Dark Blue: hsl(235, 21%, 11%)
+// - Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+// - Light Grayish Blue: hsl(234, 39%, 85%)
+// - Light Grayish Blue (hover): hsl(236, 33%, 92%)
+// - Dark Grayish Blue: hsl(234, 11%, 52%)
+// - Very Dark Grayish Blue: hsl(233, 14%, 35%)
+// - Very Dark Grayish Blue: hsl(237, 14%, 26%)
+
+$color-dark-primary-blue-900: hsl(236, 33%, 92%);
+$color-dark-primary-blue-800: hsl(235, 24%, 19%);
+$color-dark-primary-blue-700: hsl(237, 14%, 26%);
+$color-dark-primary-blue-600: hsl(233, 14%, 35%);
+$color-dark-primary-blue-300: hsl(234, 11%, 52%);
+$color-dark-primary-blue-200: hsl(234, 39%, 85%);
+$color-dark-primary-blue-100: hsl(236, 33%, 92%);

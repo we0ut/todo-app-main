@@ -1,0 +1,40 @@
+.background-img {
+  height: 200px;
+  width: 375px;
+  background: url("/images/bg-mobile-light.jpg");
+  background-size: 375px 200px;
+  position: absolute;
+}
+/* 2px, 4px, 8px, 16px, 24px, 32px, 48px, 64px */
+
+.section-app {
+  position: relative;
+  z-index: 999;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  gap: 20rem;
+  flex-direction: row;
+}
+
+.heading-primary {
+  color: $color-light-primary-gray-900;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 5.75px;
+}
+
+.form-list-item {
+  font-size: 1.8rem;
+  color: $color-light-primary-gray-300;
+}
+
+.form-list-box {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}

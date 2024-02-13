@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="scss/style.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        /* position: relative; */
+        z-index: 99;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-img"></div>
+    <section class="section-app">
+      <div class="heading">
+        <h1 class="heading-primary">TODO</h1>
+        <img src="images/icon-moon.svg" alt="Moon icon" class="icon-mode" />
+      </div>
+
+      <form action="" method="post">
+        <label for="input-task"></label>
+        <input
+          type="text"
+          id="input-task"
+          name="new-task"
+          placeholder="Create a new task"
+        />
+      </form>
+
+      <div class="form-list">
+        <ul class="form-list-box">
+          <li class="form-list-item">Complete online Javascript course</li>
+          <li class="form-list-item">Jog around the park 3x</li>
+          <li class="form-list-item">10 minutes meditation</li>
+          <li class="form-list-item">Read for 1 hour</li>
+          <li class="form-list-item">Pick up groceries</li>
+          <li class="form-list-item">Complete Todo App on Frontend Mentor</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Andrej Vuchkov</a>.
+    </div>
+  </body>
+</html>
