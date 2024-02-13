@@ -99,6 +99,9 @@ select {
 
 .form-list-box {
   display: flex;
+  background-color: hsl(235, 19%, 35%);
   flex-direction: column;
   padding: 2rem;
+  gap: 2rem;
+  border-radius: 30px;
 }/*# sourceMappingURL=style.css.map */

@@ -31,12 +31,13 @@
 .form-list-item {
   font-size: 1.8rem;
   color: $color-light-primary-gray-300;
-  // qdsaf
-  // hgdytd
 }
 
 .form-list-box {
   display: flex;
+  background-color: $color-light-primary-gray-100;
   flex-direction: column;
   padding: 2rem;
+  gap: 2rem;
+  border-radius: 30px;
 }
