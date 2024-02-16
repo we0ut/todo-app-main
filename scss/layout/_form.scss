@@ -1,0 +1,88 @@
+// Form items
+.form-list-item {
+  @include form-list-item-mix;
+}
+
+.form-list-item--end {
+  @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
+  border: 0;
+}
+
+.form-list {
+  padding: 2rem;
+}
+
+.form-list-box {
+  display: flex;
+  background-color: $color-light-primary-gray-900;
+  box-shadow: $box-shadow;
+  flex-direction: column;
+  border-radius: $border-radius;
+}
+
+.form-list-item--flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+// Form input
+.form-box {
+  @include form-box-mix;
+}
+
+.form-input {
+  border: none;
+  border-radius: 8px;
+  flex: 1;
+  background-color: $color-light-primary-gray-900;
+
+  color: $color-light-primary-gray-100;
+  padding: 2rem;
+  font-size: $font-size--mobile;
+}
+
+.close-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.circle {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: 1px solid $color-light-primary-gray-500;
+}
+
+.circle-checked {
+  background-image: linear-gradient(
+    135deg,
+    $color-linear-gradient-aqua,
+    $color-linear-gradient-pink
+  );
+}
+
+.icon-check {
+  margin: 0 auto;
+}
+
+// Form states
+.form-state {
+  @include form-box-mix;
+}
+
+.form-state-item {
+  @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
+  border: 0;
+  font-weight: 700;
+}
+
+.state-checked {
+  color: $color-primary-blue;
+}
+
+.hidden {
+  display: none !important;
+}

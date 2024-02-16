@@ -63,10 +63,6 @@ select {
   }
 }
 .background-img {
-  height: 200px;
-  width: 375px;
-  background: url("/images/bg-mobile-light.jpg");
-  background-size: 375px 200px;
   position: absolute;
 }
 
@@ -93,15 +89,114 @@ select {
 }
 
 .form-list-item {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  color: hsl(235, 19%, 35%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-list-item--end {
+  font-size: 1.2rem;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
   color: hsl(236, 9%, 61%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+}
+
+.form-list {
+  padding: 2rem;
 }
 
 .form-list-box {
   display: flex;
-  background-color: hsl(235, 19%, 35%);
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 10px 10px 113px -24px rgba(0, 0, 0, 0.5);
   flex-direction: column;
+  border-radius: 8px;
+}
+
+.form-list-item--flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.form-box {
+  display: flex;
+  max-width: 33.5rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  align-items: center;
+  padding: 0 2rem 0 2rem;
+  justify-content: center;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.form-input {
+  border: none;
+  border-radius: 8px;
+  flex: 1;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 19%, 35%);
   padding: 2rem;
-  gap: 2rem;
-  border-radius: 30px;
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.circle {
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: 1px solid hsl(233, 11%, 84%);
+}
+
+.circle-checked {
+  background-image: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.icon-check {
+  margin: 0 auto;
+}
+
+.form-state {
+  display: flex;
+  max-width: 33.5rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  align-items: center;
+  padding: 0 2rem 0 2rem;
+  justify-content: center;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.form-state-item {
+  font-size: 1.2rem;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+  color: hsl(236, 9%, 61%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  font-weight: 700;
+}
+
+.state-checked {
+  color: hsl(220, 98%, 61%);
+}
+
+.hidden {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */

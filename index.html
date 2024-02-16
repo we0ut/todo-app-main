@@ -37,40 +37,138 @@
     </style>
   </head>
   <body>
-    <div class="background-img"></div>
-    <section class="section-app">
-      <div class="heading">
-        <h1 class="heading-primary">TODO</h1>
-        <img src="images/icon-moon.svg" alt="Moon icon" class="icon-mode" />
-      </div>
-
-      <form action="" method="post">
-        <label for="input-task"></label>
-        <input
-          type="text"
-          id="input-task"
-          name="new-task"
-          placeholder="Create a new task"
+    <main>
+      <picture class="background-img">
+        <source
+          srcset="/images/bg-desktop-light.jpg"
+          media="(min-width:376px)"
         />
-      </form>
+        <img src="/images/bg-mobile-light.jpg" alt="BG light" />
+      </picture>
 
-      <div class="form-list">
-        <ul class="form-list-box">
-          <li class="form-list-item">Complete online Javascript course</li>
-          <li class="form-list-item">Jog around the park 3x</li>
-          <li class="form-list-item">10 minutes meditation</li>
-          <li class="form-list-item">Read for 1 hour</li>
-          <li class="form-list-item">Pick up groceries</li>
-          <li class="form-list-item">Complete Todo App on Frontend Mentor</li>
-        </ul>
+      <div class="section-app">
+        <div class="heading">
+          <h1 class="heading-primary">TODO</h1>
+          <img src="images/icon-moon.svg" alt="Moon icon" class="icon-mode" />
+        </div>
+
+        <form action="" method="post" class="form-box">
+          <label for="input-task"></label>
+          <span class="circle"></span>
+          <input
+            type="text"
+            id="input-task"
+            name="new-task"
+            placeholder="Create a new task..."
+            class="form-input"
+          />
+        </form>
+
+        <div class="form-list">
+          <ul class="form-list-box">
+            <li class="form-list-item">
+              <div class="form-list-item--flex">
+                <span class="circle circle-checked">
+                  <img
+                    src="/images/icon-check.svg"
+                    alt="Icon check"
+                    class="icon-check"
+                  />
+                </span>
+                Complete online Javascript course
+              </div>
+              <a href="#"
+                ><img
+                  src="/images/icon-cross.svg"
+                  alt="Close button"
+                  class="close-btn"
+              /></a>
+            </li>
+            <li class="form-list-item">
+              <div class="form-list-item--flex">
+                <span class="circle"></span>
+                Jog around the park 3x
+              </div>
+              <a href="#"
+                ><img
+                  src="/images/icon-cross.svg"
+                  alt="Close button"
+                  class="close-btn"
+              /></a>
+            </li>
+            <li class="form-list-item">
+              <div class="form-list-item--flex">
+                <span class="circle"></span>
+                10 minutes meditation
+              </div>
+              <a href="#"
+                ><img
+                  src="/images/icon-cross.svg"
+                  alt="Close button"
+                  class="close-btn"
+              /></a>
+            </li>
+            <li class="form-list-item">
+              <div class="form-list-item--flex">
+                <span class="circle"></span>
+                Read for 1 hour
+              </div>
+              <a href="#"
+                ><img
+                  src="/images/icon-cross.svg"
+                  alt="Close button"
+                  class="close-btn"
+              /></a>
+            </li>
+            <li class="form-list-item">
+              <div class="form-list-item--flex">
+                <span class="circle"></span>
+                Pick up groceries
+              </div>
+              <a href="#"
+                ><img
+                  src="/images/icon-cross.svg"
+                  alt="Close button"
+                  class="close-btn"
+              /></a>
+            </li>
+            <li class="form-list-item">
+              <div class="form-list-item--flex">
+                <span class="circle"></span>
+                Complete Todo App on Frontend Mentor
+              </div>
+              <a href="#"
+                ><img
+                  src="/images/icon-cross.svg"
+                  alt="Close button"
+                  class="close-btn"
+              /></a>
+            </li>
+            <li class="form-list-item--end">
+              <span>5 items left</span>
+              <div class="form-state hidden">
+                <a href="#"><p class="form-state-item state-checked">All</p></a>
+                <a href="#"> <p class="form-state-item">Active</p></a>
+                <a href="#"> <p class="form-state-item">Completed</p></a>
+              </div>
+              <span>Clear completed</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-state">
+          <a href="#"><p class="form-state-item state-checked">All</p></a>
+          <a href="#"> <p class="form-state-item">Active</p></a>
+          <a href="#"> <p class="form-state-item">Completed</p></a>
+        </div>
       </div>
-    </section>
+    </main>
 
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Andrej Vuchkov</a>.
-    </div>
+    </footer>
   </body>
 </html>

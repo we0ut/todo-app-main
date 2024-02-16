@@ -1,8 +1,8 @@
 .background-img {
-  height: 200px;
-  width: 375px;
-  background: url("/images/bg-mobile-light.jpg");
-  background-size: 375px 200px;
+  // height: 200px;
+  // width: 375px;
+  // background: url("/images/bg-mobile-light.jpg");
+  // background-size: 375px 200px;
   position: absolute;
 }
 /* 2px, 4px, 8px, 16px, 24px, 32px, 48px, 64px */
@@ -26,18 +26,4 @@
   font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 5.75px;
-}
-
-.form-list-item {
-  font-size: 1.8rem;
-  color: $color-light-primary-gray-300;
-}
-
-.form-list-box {
-  display: flex;
-  background-color: $color-light-primary-gray-100;
-  flex-direction: column;
-  padding: 2rem;
-  gap: 2rem;
-  border-radius: 30px;
 }
