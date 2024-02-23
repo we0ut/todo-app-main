@@ -1,0 +1,76 @@
+.close-btn {
+  cursor: pointer;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: none;
+  background-color: $color-light-primary-gray-900;
+}
+
+.icon-mode {
+  border: 0;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.circle {
+  cursor: pointer;
+  appearance: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 100%;
+  border: 1px solid $color-light-primary-gray-500;
+
+  // transition: all 0.3s;
+  position: relative;
+  isolation: isolate;
+  background-color: white;
+
+  &:hover,
+  &:focus {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      // background-color: red;
+      z-index: -2;
+      border-radius: 100%;
+    }
+  }
+}
+
+.circle:checked {
+  background-image: url("/images/icon-check.svg"),
+    linear-gradient(
+      135deg,
+      $color-linear-gradient-aqua,
+      $color-linear-gradient-pink
+    );
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-state-btn {
+  @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
+  border: none;
+  background-color: $color-light-primary-gray-900;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-light-primary-gray-100;
+  }
+}
+
+.form-state-btn--clear {
+  @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
+  border: none;
+  background-color: $color-light-primary-gray-900;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-light-primary-gray-100;
+  }
+}

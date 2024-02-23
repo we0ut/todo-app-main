@@ -23,152 +23,123 @@
 
     <title>Frontend Mentor | Todo app</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-        /* position: relative; */
-        z-index: 99;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <script src="script.js"></script>
   </head>
   <body>
     <main>
       <picture class="background-img">
         <source
-          srcset="/images/bg-desktop-light.jpg"
-          media="(min-width:376px)"
+          srcset="/images/bg-mobile-light.jpg"
+          media="(max-width:376px)"
         />
-        <img src="/images/bg-mobile-light.jpg" alt="BG light" />
+        <img src="/images/bg-desktop-light.jpg" alt="BG light" />
       </picture>
 
       <div class="section-app">
         <div class="heading">
           <h1 class="heading-primary">TODO</h1>
-          <img src="images/icon-moon.svg" alt="Moon icon" class="icon-mode" />
+          <button class="icon-mode">
+            <img src="images/icon-moon.svg" alt="Moon icon" />
+          </button>
         </div>
 
-        <form action="" method="post" class="form-box">
-          <label for="input-task"></label>
-          <span class="circle"></span>
-          <input
-            type="text"
-            id="input-task"
-            name="new-task"
-            placeholder="Create a new task..."
-            class="form-input"
-          />
-        </form>
+        <div class="form">
+          <form action="" method="post" class="form-box">
+            <label for="input-task"></label>
+            <input type="checkbox" class="circle" />
+            <input
+              type="text"
+              id="input-task"
+              name="new-task"
+              placeholder="Create a new task..."
+              class="form-input"
+            />
+          </form>
 
-        <div class="form-list">
-          <ul class="form-list-box">
-            <li class="form-list-item">
-              <div class="form-list-item--flex">
-                <span class="circle circle-checked">
-                  <img
-                    src="/images/icon-check.svg"
-                    alt="Icon check"
-                    class="icon-check"
-                  />
-                </span>
-                Complete online Javascript course
-              </div>
-              <a href="#"
-                ><img
-                  src="/images/icon-cross.svg"
-                  alt="Close button"
-                  class="close-btn"
-              /></a>
-            </li>
-            <li class="form-list-item">
-              <div class="form-list-item--flex">
-                <span class="circle"></span>
-                Jog around the park 3x
-              </div>
-              <a href="#"
-                ><img
-                  src="/images/icon-cross.svg"
-                  alt="Close button"
-                  class="close-btn"
-              /></a>
-            </li>
-            <li class="form-list-item">
-              <div class="form-list-item--flex">
-                <span class="circle"></span>
-                10 minutes meditation
-              </div>
-              <a href="#"
-                ><img
-                  src="/images/icon-cross.svg"
-                  alt="Close button"
-                  class="close-btn"
-              /></a>
-            </li>
-            <li class="form-list-item">
-              <div class="form-list-item--flex">
-                <span class="circle"></span>
-                Read for 1 hour
-              </div>
-              <a href="#"
-                ><img
-                  src="/images/icon-cross.svg"
-                  alt="Close button"
-                  class="close-btn"
-              /></a>
-            </li>
-            <li class="form-list-item">
-              <div class="form-list-item--flex">
-                <span class="circle"></span>
-                Pick up groceries
-              </div>
-              <a href="#"
-                ><img
-                  src="/images/icon-cross.svg"
-                  alt="Close button"
-                  class="close-btn"
-              /></a>
-            </li>
-            <li class="form-list-item">
-              <div class="form-list-item--flex">
-                <span class="circle"></span>
-                Complete Todo App on Frontend Mentor
-              </div>
-              <a href="#"
-                ><img
-                  src="/images/icon-cross.svg"
-                  alt="Close button"
-                  class="close-btn"
-              /></a>
-            </li>
-            <li class="form-list-item--end">
-              <span>5 items left</span>
-              <div class="form-state hidden">
-                <a href="#"><p class="form-state-item state-checked">All</p></a>
-                <a href="#"> <p class="form-state-item">Active</p></a>
-                <a href="#"> <p class="form-state-item">Completed</p></a>
-              </div>
-              <span>Clear completed</span>
-            </li>
-          </ul>
+          <div class="form-list">
+            <ul class="form-list-box">
+              <li class="form-list-item">
+                <div class="form-list-item--flex">
+                  <input type="checkbox" class="circle" />
+                  <p class="form-list-text">
+                    Complete online Javascript course
+                  </p>
+                </div>
+                <button class="close-btn">
+                  <img src="/images/icon-cross.svg" alt="Close button" />
+                </button>
+              </li>
+              <li class="form-list-item">
+                <div class="form-list-item--flex">
+                  <input type="checkbox" class="circle" />
+                  <p class="form-list-text">Jog around the park 3x</p>
+                </div>
+                <button class="close-btn">
+                  <img src="/images/icon-cross.svg" alt="Close button" />
+                </button>
+              </li>
+              <li class="form-list-item">
+                <div class="form-list-item--flex">
+                  <input type="checkbox" class="circle" />
+                  <p class="form-list-text">10 minutes meditation</p>
+                </div>
+                <button class="close-btn">
+                  <img src="/images/icon-cross.svg" alt="Close button" />
+                </button>
+              </li>
+              <li class="form-list-item">
+                <div class="form-list-item--flex">
+                  <input type="checkbox" class="circle" />
+                  <p class="form-list-text">Read for 1 hour</p>
+                </div>
+                <button class="close-btn">
+                  <img src="/images/icon-cross.svg" alt="Close button" />
+                </button>
+              </li>
+              <li class="form-list-item">
+                <div class="form-list-item--flex">
+                  <input type="checkbox" class="circle" />
+                  <p class="form-list-text">Pick up groceries</p>
+                </div>
+                <button class="close-btn">
+                  <img src="/images/icon-cross.svg" alt="Close button" />
+                </button>
+              </li>
+              <li class="form-list-item">
+                <div class="form-list-item--flex">
+                  <input type="checkbox" class="circle" />
+                  <p class="form-list-text">
+                    Complete Todo App on Frontend Mentor
+                  </p>
+                </div>
+                <button class="close-btn">
+                  <img src="/images/icon-cross.svg" alt="Close button" />
+                </button>
+              </li>
+              <li class="form-list-item--end">
+                <span>5 items left</span>
+                <div class="form-state">
+                  <button class="form-state-btn state-checked">All</button>
+                  <button class="form-state-btn">Active</button>
+                  <button class="form-state-btn">Completed</button>
+                </div>
+                <div class="form-state hidden">
+                  <button class="form-state-btn">All</button>
+                  <button class="form-state-btn">Active</button>
+                  <button class="form-state-btn">Completed</button>
+                </div>
+                <button class="form-state-btn--clear">Clear completed</button>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="form-state">
-          <a href="#"><p class="form-state-item state-checked">All</p></a>
-          <a href="#"> <p class="form-state-item">Active</p></a>
-          <a href="#"> <p class="form-state-item">Completed</p></a>
+        <div class="form-state hidden">
+          <button class="form-state-btn state-checked">All</button>
+          <button class="form-state-btn">Active</button>
+          <button class="form-state-btn">Completed</button>
         </div>
       </div>
     </main>
-
-    <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Andrej Vuchkov</a>.
-    </footer>
   </body>
 </html>

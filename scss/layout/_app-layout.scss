@@ -1,23 +1,26 @@
 .background-img {
-  // height: 200px;
-  // width: 375px;
-  // background: url("/images/bg-mobile-light.jpg");
-  // background-size: 375px 200px;
-  position: absolute;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+
+  img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
 }
 /* 2px, 4px, 8px, 16px, 24px, 32px, 48px, 64px */
-
-.section-app {
-  position: relative;
-  z-index: 999;
-}
 
 .heading {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 4rem;
-  gap: 20rem;
+  margin: 0 auto;
+
+  max-width: 60rem;
   flex-direction: row;
 }
 

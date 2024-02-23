@@ -1,5 +1,4 @@
 @mixin form-list-item-mix(
-  $font-size--mobile: $font-size--mobile,
   $color-gray-500: $color-light-primary-gray-500,
   $color-gray-100: $color-light-primary-gray-100
 ) {
@@ -18,11 +17,11 @@
   $color-gray-900: $color-light-primary-gray-900
 ) {
   display: flex;
-  max-width: 33.5rem;
+  // max-width: 33.5rem;
   margin: 0 auto;
   border-radius: $border-radius;
   align-items: center;
   padding: 0 2rem 0 2rem;
   justify-content: center;
-  background-color: $color-light-primary-gray-900;
+  background-color: $color-gray-900;
 }
