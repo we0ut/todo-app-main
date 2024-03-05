@@ -23,7 +23,7 @@
 
     <title>Frontend Mentor | Todo app</title>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <main>
@@ -43,14 +43,13 @@
           </button>
         </div>
 
-        <div class="form">
-          <form action="" method="post" class="form-box">
+        <div class="form form-container">
+          <form class="form-box" autocomplete="off">
             <label for="input-task"></label>
             <input type="checkbox" class="circle" />
             <input
               type="text"
               id="input-task"
-              name="new-task"
               placeholder="Create a new task..."
               class="form-input"
             />
@@ -58,7 +57,7 @@
 
           <div class="form-list">
             <ul class="form-list-box">
-              <li class="form-list-item">
+              <!-- <li class="form-list-item">
                 <div class="form-list-item--flex">
                   <input type="checkbox" class="circle" />
                   <p class="form-list-text">
@@ -68,56 +67,11 @@
                 <button class="close-btn">
                   <img src="/images/icon-cross.svg" alt="Close button" />
                 </button>
-              </li>
-              <li class="form-list-item">
-                <div class="form-list-item--flex">
-                  <input type="checkbox" class="circle" />
-                  <p class="form-list-text">Jog around the park 3x</p>
-                </div>
-                <button class="close-btn">
-                  <img src="/images/icon-cross.svg" alt="Close button" />
-                </button>
-              </li>
-              <li class="form-list-item">
-                <div class="form-list-item--flex">
-                  <input type="checkbox" class="circle" />
-                  <p class="form-list-text">10 minutes meditation</p>
-                </div>
-                <button class="close-btn">
-                  <img src="/images/icon-cross.svg" alt="Close button" />
-                </button>
-              </li>
-              <li class="form-list-item">
-                <div class="form-list-item--flex">
-                  <input type="checkbox" class="circle" />
-                  <p class="form-list-text">Read for 1 hour</p>
-                </div>
-                <button class="close-btn">
-                  <img src="/images/icon-cross.svg" alt="Close button" />
-                </button>
-              </li>
-              <li class="form-list-item">
-                <div class="form-list-item--flex">
-                  <input type="checkbox" class="circle" />
-                  <p class="form-list-text">Pick up groceries</p>
-                </div>
-                <button class="close-btn">
-                  <img src="/images/icon-cross.svg" alt="Close button" />
-                </button>
-              </li>
-              <li class="form-list-item">
-                <div class="form-list-item--flex">
-                  <input type="checkbox" class="circle" />
-                  <p class="form-list-text">
-                    Complete Todo App on Frontend Mentor
-                  </p>
-                </div>
-                <button class="close-btn">
-                  <img src="/images/icon-cross.svg" alt="Close button" />
-                </button>
-              </li>
+              </li> -->
+
               <li class="form-list-item--end">
-                <span>5 items left</span>
+                <!-- popravi, namesto da e vo UL da bide vonka i vo div-->
+                <span class="form-items__count"></span>
                 <div class="form-state">
                   <button class="form-state-btn state-checked">All</button>
                   <button class="form-state-btn">Active</button>
