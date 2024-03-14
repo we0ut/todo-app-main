@@ -3,10 +3,14 @@
 const formEl = document.querySelector(".form-box");
 const inputEl = document.querySelector(".form-input");
 const countEl = document.querySelector(".form-items__count");
+const circleCheckEl = document.querySelector("#circle-check");
 
 const containerFormEl = document.querySelector(".form-list-box");
-const formListEl = document.querySelector(".form-list-item");
-const formBoxEl = document.querySelector(".form-list-box");
+const formBoxEl = document.querySelector(".form-list");
+const activeBtnEl = document.querySelector(".active-btn");
+const completedBtnEl = document.querySelector(".completed-btn");
+const allBtnEl = document.querySelector(".all-btn");
+const clearAllBtnEl = document.querySelector(".form-state-btn--clear");
 
 const tasks = [];
 
@@ -16,42 +20,106 @@ const changeCount = (el, arrLength) =>
     : `No items`);
 changeCount(countEl, tasks.length);
 
-const closeBtn = (btn) => {
-  btn.addEventListener("click", () => {
-    btn.closest(".form-list-item").style.display = "none";
-    console.log("123");
+const uniqueId = () => String(Date.now()).slice(-6);
+
+const removeTask = (taskId) => {
+  const taskIndex = tasks.findIndex((task) => task.id === taskId);
+  if (taskIndex !== -1) {
+    tasks.splice(taskIndex, 1);
+    changeCount(countEl, tasks.length);
+  }
+};
+
+const closeBtn = (boxEl, taskId) => {
+  const closeEl = document.querySelector(`#delete-${taskId}`);
+  closeEl.addEventListener("click", () => {
+    boxEl.removeChild(closeEl.parentElement);
+    removeTask(taskId);
   });
 };
 
-const formItem = (boxEl, arr) => {
-  const html = `              
-    <li class="form-list-item">
+const displayItem = (boxEl, task) => {
+  const html = `
+    <li class="form-list-item" data-complete="${task.isCompleted}">
       <div class="form-list-item--flex">
-      <input type="checkbox" class="circle" />
-      <p class="form-list-text">
-      ${arr.slice(-1)}
-      </p>
+        <input type="checkbox" id="check-${task.id}" class="circle" ${
+    task.isCompleted ? "checked" : ""
+  }/>
+        <p class="form-list-text">${task.content}</p>
       </div>
-      <button class="close-btn">
-      <img src="/images/icon-cross.svg" alt="Close button" />
+      <button class="close-btn" id="delete-${task.id}">
+        <img src="/images/icon-cross.svg" alt="Close button" />
       </button>
     </li>`;
-
+  changeCount(countEl, tasks.length);
   boxEl.insertAdjacentHTML("afterbegin", html);
+  closeBtn(boxEl, task.id);
 };
 
-// let closeEl;
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (inputEl.value === "") {
     alert("Please enter a valid task!");
   } else {
-    tasks.push(inputEl.value);
+    const formTask = {
+      content: inputEl.value,
+      id: uniqueId(),
+      isCompleted: circleCheckEl.checked,
+    };
+    tasks.push(formTask);
     inputEl.value = "";
-    changeCount(countEl, tasks.length);
-    formItem(formBoxEl, tasks);
-    const closeEl = document.querySelector(".close-btn");
-    closeBtn(closeEl);
+    displayItem(containerFormEl, formTask);
   }
 });
+
+containerFormEl.addEventListener("change", (e) => {
+  const checkbox = e.target;
+  const taskId = checkbox.id.split("-")[1];
+  const task = tasks.find((task) => task.id === taskId);
+  task.isCompleted = checkbox.checked;
+});
+
+tasks.forEach((task) => {
+  displayItem(containerFormEl, task);
+});
+
+activeBtnEl.addEventListener("click", () => {
+  const activeTasks = tasks.filter((task) => !task.isCompleted);
+  displayTasks(activeTasks);
+});
+
+completedBtnEl.addEventListener("click", () => {
+  const completedTasks = tasks.filter((task) => task.isCompleted);
+  displayTasks(completedTasks);
+});
+
+allBtnEl.addEventListener("click", () => {
+  displayTasks(tasks);
+});
+
+clearAllBtnEl.addEventListener("click", () => {
+  // Filter out the incomplete tasks
+  const incompleteTasks = tasks.filter((task) => !task.isCompleted);
+
+  // Update the tasks array with only the incomplete tasks
+  tasks.splice(0, tasks.length, ...incompleteTasks);
+
+  // Clear the current task list from the DOM
+  containerFormEl.innerHTML = "";
+
+  // Rebuild the task list in the DOM based on the incomplete tasks
+  tasks.forEach((task) => {
+    displayItem(containerFormEl, task);
+  });
+
+  // Update the count
+  changeCount(countEl, incompleteTasks.length);
+});
+
+// function displayTasks(tasksArray) {
+//   containerFormEl.innerHTML = "";
+//   tasksArray.forEach((task) => {
+//     displayItem(containerFormEl, task);
+//   });
+// }

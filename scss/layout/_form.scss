@@ -14,8 +14,16 @@
 }
 
 .form-list-item--end {
-  @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
-  border: 0;
+  // @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
+  font-size: $font-size--mobile;
+
+  color: $color-light-primary-gray-300;
+  padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // border: 0;
 }
 
 .form-list {
@@ -29,6 +37,26 @@
   box-shadow: $box-shadow;
   flex-direction: column;
   border-radius: $border-radius;
+}
+
+.form-list-box li:last-child {
+  border: none;
+}
+
+.form-list-item__box {
+  background-color: $color-light-primary-gray-900;
+
+  box-shadow: 10px 8px 81px -10px rgba(0, 0, 0, 0.45);
+  margin: 0 auto;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  border-radius: $border-radius;
+}
+
+.form-items__count {
+  padding: 2rem;
 }
 
 .form-list-item--flex {
@@ -62,6 +90,10 @@
 // Form states
 .form-state {
   @include form-box-mix;
+  background-color: transparent;
+  border-radius: 0;
+  border-top: 1px solid $color-light-primary-gray-500;
+  border-bottom: 1px solid $color-light-primary-gray-500;
 }
 
 .hidden {

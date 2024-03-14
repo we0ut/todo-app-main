@@ -30,6 +30,15 @@
     font-size: 1.4rem;
   }
 
+  .form-list-item__box {
+    flex-direction: row;
+  }
+
+  .form-state {
+    border-top: 0;
+    border-bottom: 0;
+  }
+
   .form-state-btn {
     font-size: 1.4rem;
   }
