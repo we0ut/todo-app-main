@@ -1,16 +1,16 @@
 "use strict";
 
-const formEl = document.querySelector(".form-box");
-const inputEl = document.querySelector(".form-input");
-const countEl = document.querySelector(".form-items__count");
+const formEl = document.querySelector(".form__box");
+const inputEl = document.querySelector(".form__input");
+const countEl = document.querySelector(".form__items__count");
 const circleCheckEl = document.querySelector("#circle-check");
 
-const containerFormEl = document.querySelector(".form-list-box");
-const formBoxEl = document.querySelector(".form-list");
+const containerFormEl = document.querySelector(".form__list-box");
+const formBoxEl = document.querySelector(".form__list");
 const activeBtnEl = document.querySelector(".active-btn");
 const completedBtnEl = document.querySelector(".completed-btn");
 const allBtnEl = document.querySelector(".all-btn");
-const clearAllBtnEl = document.querySelector(".form-state-btn--clear");
+const clearAllBtnEl = document.querySelector(".form__state-btn--clear");
 
 const tasks = [];
 
@@ -40,12 +40,12 @@ const closeBtn = (boxEl, taskId) => {
 
 const displayItem = (boxEl, task) => {
   const html = `
-    <li class="form-list-item" data-complete="${task.isCompleted}">
-      <div class="form-list-item--flex">
+    <li class="form__list-item" data-complete="${task.isCompleted}">
+      <div class="form__list-item--flex">
         <input type="checkbox" id="check-${task.id}" class="circle" ${
     task.isCompleted ? "checked" : ""
   }/>
-        <p class="form-list-text">${task.content}</p>
+        <p class="form__list-text">${task.content}</p>
       </div>
       <button class="close-btn" id="delete-${task.id}">
         <img src="/images/icon-cross.svg" alt="Close button" />
@@ -117,9 +117,9 @@ clearAllBtnEl.addEventListener("click", () => {
   changeCount(countEl, incompleteTasks.length);
 });
 
-// function displayTasks(tasksArray) {
-//   containerFormEl.innerHTML = "";
-//   tasksArray.forEach((task) => {
-//     displayItem(containerFormEl, task);
-//   });
-// }
+const displayTasks = (tasksArray) => {
+  containerFormEl.innerHTML = "";
+  tasksArray.forEach((task) => {
+    displayItem(containerFormEl, task);
+  });
+};

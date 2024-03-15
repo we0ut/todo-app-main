@@ -36,27 +36,27 @@
       </picture>
 
       <div class="section-app">
-        <div class="heading">
+        <header class="heading">
           <h1 class="heading-primary">TODO</h1>
           <button class="icon-mode">
             <img src="images/icon-moon.svg" alt="Moon icon" />
           </button>
-        </div>
+        </header>
 
         <div class="form form-container">
-          <form class="form-box" autocomplete="off">
+          <form class="form__box" autocomplete="off">
             <label for="input-task"></label>
             <input type="checkbox" class="circle" id="circle-check" />
             <input
               type="text"
               id="input-task"
               placeholder="Create a new task..."
-              class="form-input"
+              class="form__input"
             />
           </form>
 
-          <div class="form-list">
-            <ul class="form-list-box">
+          <div class="form__list">
+            <ul class="form__list-box">
               <!-- <li class="form-list-item">
                 <div class="form-list-item--flex">
                   <input type="checkbox" class="circle" />
@@ -88,15 +88,15 @@
           </div>
         </div>
 
-        <div class="form-list-item--end">
-          <div class="form-list-item__box">
-            <span class="form-items__count"></span>
-            <div class="form-state">
-              <button class="form-state-btn state-checked all-btn">All</button>
-              <button class="form-state-btn active-btn">Active</button>
-              <button class="form-state-btn completed-btn">Completed</button>
+        <div class="form__list-item--end">
+          <div class="form__list-item__box">
+            <span class="form__items__count"></span>
+            <div class="form__state">
+              <button class="form__state-btn state-checked all-btn">All</button>
+              <button class="form__state-btn active-btn">Active</button>
+              <button class="form__state-btn completed-btn">Completed</button>
             </div>
-            <button class="form-state-btn--clear">Clear completed</button>
+            <button class="form__state-btn--clear">Clear completed</button>
           </div>
         </div>
       </div>

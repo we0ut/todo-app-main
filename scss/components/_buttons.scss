@@ -3,7 +3,7 @@
   width: 1.4rem;
   height: 1.4rem;
   border: none;
-  background-color: $color-light-primary-gray-900;
+  background-color: $color-light-primary-gray-100;
 }
 
 .icon-mode {
@@ -20,7 +20,6 @@
   border-radius: 100%;
   border: 1px solid $color-light-primary-gray-500;
 
-  // transition: all 0.3s;
   position: relative;
   isolation: isolate;
   background-color: white;
@@ -31,7 +30,6 @@
       content: "";
       position: absolute;
       inset: -2px;
-      // background-color: red;
       z-index: -2;
       border-radius: 100%;
     }
@@ -49,21 +47,25 @@
   background-position: center;
 }
 
-.form-state-btn {
-  @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
+.form__state-btn {
+  @include form-list-item-mix($color-gray-900: $color-light-primary-gray-700);
   border: none;
-  background-color: $color-light-primary-gray-900;
+  background-color: $color-light-primary-gray-100;
   font-weight: 700;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    color: $color-light-primary-gray-100;
+    color: $color-light-primary-gray-900;
+  }
+
+  @media (min-width: 376px) {
+    font-size: 1.4rem;
   }
 }
 
-.form-state-btn--clear {
-  @include form-list-item-mix($color-gray-100: $color-light-primary-gray-300);
+.form__state-btn--clear {
+  @include form-list-item-mix($color-gray-900: $color-light-primary-gray-700);
 
   border: none;
   background-color: transparent;
@@ -72,6 +74,6 @@
 
   &:hover,
   &:focus {
-    color: $color-light-primary-gray-100;
+    color: $color-light-primary-gray-900;
   }
 }
