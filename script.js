@@ -4,6 +4,13 @@ const formEl = document.querySelector(".form__box");
 const inputEl = document.querySelector(".form__input");
 const countEl = document.querySelector(".form__items__count");
 const circleCheckEl = document.querySelector("#circle-check");
+const circleEl = document.querySelector(".circle");
+const formListItemBoxEl = document.querySelector(".form__list-item__box");
+
+const iconModeEl = document.querySelector(".icon-mode");
+const lightIconEl = document.querySelector(".icon-light");
+const darkIconEl = document.querySelector(".icon-dark");
+const bodyEl = document.querySelector(".body");
 
 const containerFormEl = document.querySelector(".form__list-box");
 const formBoxEl = document.querySelector(".form__list");
@@ -42,7 +49,7 @@ const displayItem = (boxEl, task) => {
   const html = `
     <li class="form__list-item" data-complete="${task.isCompleted}">
       <div class="form__list-item--flex">
-        <input type="checkbox" id="check-${task.id}" class="circle" ${
+        <input type="checkbox" id="check-${task.id}" class=" circle" ${
     task.isCompleted ? "checked" : ""
   }/>
         <p class="form__list-text">${task.content}</p>
@@ -99,21 +106,12 @@ allBtnEl.addEventListener("click", () => {
 });
 
 clearAllBtnEl.addEventListener("click", () => {
-  // Filter out the incomplete tasks
   const incompleteTasks = tasks.filter((task) => !task.isCompleted);
-
-  // Update the tasks array with only the incomplete tasks
   tasks.splice(0, tasks.length, ...incompleteTasks);
-
-  // Clear the current task list from the DOM
   containerFormEl.innerHTML = "";
-
-  // Rebuild the task list in the DOM based on the incomplete tasks
   tasks.forEach((task) => {
     displayItem(containerFormEl, task);
   });
-
-  // Update the count
   changeCount(countEl, incompleteTasks.length);
 });
 
@@ -123,3 +121,14 @@ const displayTasks = (tasksArray) => {
     displayItem(containerFormEl, task);
   });
 };
+
+iconModeEl.addEventListener("click", function () {
+  lightIconEl.classList.toggle("icon-hide");
+  darkIconEl.classList.toggle("icon-show");
+  bodyEl.classList.toggle("dark__body-background");
+  formEl.classList.toggle("dark__form");
+  inputEl.classList.toggle("dark__form__input");
+  circleEl.classList.toggle("dark__circle");
+  containerFormEl.classList.toggle("dark__form__list-box");
+  formListItemBoxEl.classList.toggle("dark__form__list-item__box");
+});

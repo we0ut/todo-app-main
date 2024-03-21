@@ -1,0 +1,41 @@
+// Dark Mode Classes
+.dark__body-background {
+  background-color: $color-dark-primary-blue-800;
+}
+
+.dark__form {
+  background-color: $color-dark-primary-blue-700;
+}
+
+// form input
+.dark__form__input {
+  color: $color-dark-primary-blue-100;
+}
+.dark__form__input::placeholder {
+  color: $color-dark-primary-blue-300;
+}
+
+.dark__circle {
+  border: 1px solid $color-dark-primary-blue-600;
+}
+
+// form list box
+.dark__form__list-box {
+  background-color: $color-dark-primary-blue-700;
+  color: $color-dark-primary-blue-100;
+}
+
+.dark__form__list-item__box {
+  background-color: $color-dark-primary-blue-700;
+}
+.dark__form__list-item__box {
+  color: $color-dark-primary-blue-100;
+}
+
+.dark__form__list-item {
+  border-bottom: 1px solid red;
+}
+
+.dark__form__close-btn {
+  background-color: $color-dark-primary-blue-700;
+}

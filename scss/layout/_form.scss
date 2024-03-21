@@ -10,6 +10,7 @@
 // Form items
 .form__list-item {
   @include form-list-item-mix;
+  color: unset;
 
   .circle:checked ~ .form__list-text {
     text-decoration: line-through;
@@ -47,6 +48,7 @@
 .form__list-box {
   display: flex;
   background-color: $color-light-primary-gray-100;
+  color: $color-light-primary-gray-900;
   box-shadow: $box-shadow;
   flex-direction: column;
   border-radius: $border-radius;

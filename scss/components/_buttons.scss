@@ -3,7 +3,7 @@
   width: 1.4rem;
   height: 1.4rem;
   border: none;
-  background-color: $color-light-primary-gray-100;
+  background-color: transparent;
 }
 
 .icon-mode {
@@ -22,7 +22,7 @@
 
   position: relative;
   isolation: isolate;
-  background-color: white;
+  // background-color: white;
 
   &:hover,
   &:focus {
@@ -50,7 +50,7 @@
 .form__state-btn {
   @include form-list-item-mix($color-gray-900: $color-light-primary-gray-700);
   border: none;
-  background-color: $color-light-primary-gray-100;
+  background-color: transparent;
   font-weight: 700;
   cursor: pointer;
 
