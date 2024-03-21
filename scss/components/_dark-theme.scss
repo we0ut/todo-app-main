@@ -32,10 +32,29 @@
   color: $color-dark-primary-blue-100;
 }
 
-.dark__form__list-item {
-  border-bottom: 1px solid red;
+.form__list-item {
+  @if $dark__bg-color {
+    // border-bottom: 1px solid $color-dark-primary-blue-600;
+  }
 }
 
 .dark__form__close-btn {
   background-color: $color-dark-primary-blue-700;
 }
+
+.dark__form__state-btn--clear:hover {
+  color: $color-dark-primary-blue-200;
+}
+
+.circle {
+  @if $dark__bg-color {
+    // border: 1px solid $color-dark-primary-blue-600;
+  }
+}
+
+// .close-img {
+//   // color: red;
+//   @if $dark__bg-color ==true {
+//     color: white !important;
+//   }
+// }

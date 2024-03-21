@@ -49,13 +49,13 @@ const displayItem = (boxEl, task) => {
   const html = `
     <li class="form__list-item" data-complete="${task.isCompleted}">
       <div class="form__list-item--flex">
-        <input type="checkbox" id="check-${task.id}" class=" circle" ${
+        <input type="checkbox" id="check-${task.id}" class="circle" ${
     task.isCompleted ? "checked" : ""
   }/>
         <p class="form__list-text">${task.content}</p>
       </div>
       <button class="close-btn" id="delete-${task.id}">
-        <img src="/images/icon-cross.svg" alt="Close button" />
+        <img src="/images/icon-cross.svg" class="close-img" alt="Close button" />
       </button>
     </li>`;
   changeCount(countEl, tasks.length);
@@ -131,4 +131,5 @@ iconModeEl.addEventListener("click", function () {
   circleEl.classList.toggle("dark__circle");
   containerFormEl.classList.toggle("dark__form__list-box");
   formListItemBoxEl.classList.toggle("dark__form__list-item__box");
+  clearAllBtnEl.classList.toggle("dark__form__state-btn--clear");
 });
