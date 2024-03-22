@@ -6,6 +6,10 @@
   background-color: transparent;
 }
 
+.close-img {
+  filter: invert(50%);
+}
+
 .icon-mode {
   border: 0;
   cursor: pointer;
@@ -18,7 +22,7 @@
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 100%;
-  border: 1px solid $color-light-primary-gray-500;
+  border: 1px solid var(--neutral-300);
 
   position: relative;
   isolation: isolate;
@@ -48,7 +52,7 @@
 }
 
 .form__state-btn {
-  @include form-list-item-mix($color-gray-900: $color-light-primary-gray-700);
+  @include form-list-item-mix($color-gray-900: var(--neutral-400));
   border: none;
   background-color: transparent;
   font-weight: 700;
@@ -56,16 +60,16 @@
 
   &:hover,
   &:focus {
-    color: $color-light-primary-gray-900;
+    color: var(--neutral-500);
   }
 
-  @media (min-width: 376px) {
+  @media (min-width: 768px) {
     font-size: 1.4rem;
   }
 }
 
 .form__state-btn--clear {
-  @include form-list-item-mix($color-gray-900: $color-light-primary-gray-700);
+  @include form-list-item-mix($color-gray-900: var(--neutral-400));
 
   border: none;
   background-color: transparent;
@@ -74,6 +78,6 @@
 
   &:hover,
   &:focus {
-    color: $color-light-primary-gray-900;
+    color: var(--neutral-500);
   }
 }

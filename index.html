@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-dark="false">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +30,7 @@
       <picture class="background-img">
         <source
           srcset="/images/bg-mobile-light.jpg"
-          media="(max-width:376px)"
+          media="(max-width:768px)"
         />
         <img src="/images/bg-desktop-light.jpg" alt="BG light" />
       </picture>
@@ -41,7 +41,7 @@
           <button class="icon-mode">
             <img
               src="images/icon-moon.svg"
-              class="icon-light"
+              class="icon-toggle-mode"
               alt="Moon icon"
             />
             <img
@@ -103,7 +103,7 @@
           <div class="form__list-item__box">
             <span class="form__items__count"></span>
             <div class="form__state">
-              <button class="form__state-btn state-checked all-btn">All</button>
+              <button class="form__state-btn all-btn">All</button>
               <button class="form__state-btn active-btn">Active</button>
               <button class="form__state-btn completed-btn">Completed</button>
             </div>

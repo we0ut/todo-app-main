@@ -1,3 +1,25 @@
+html {
+  --neutral-100: hsl(0, 0%, 98%);
+  --neutral-200: hsl(236, 33%, 92%);
+  --neutral-300: hsl(233, 11%, 84%);
+  --neutral-400: hsl(236, 9%, 61%);
+  --neutral-500: hsl(235, 19%, 35%);
+  --neutral-bg: hsl(0, 0%, 98%);
+}
+
+html[data-dark=true] {
+  --neutral-100: hsl(237, 14%, 26%);
+  --neutral-200: hsl(234, 39%, 85%);
+  --neutral-300: hsl(233, 14%, 35%);
+  --neutral-400: hsl(234, 11%, 52%);
+  --neutral-500: hsl(236, 33%, 92%);
+  --neutral-bg: hsl(235, 24%, 19%);
+}
+
+body {
+  background-color: var(--neutral-bg);
+}
+
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
@@ -127,7 +149,7 @@ select {
   font-weight: 700;
   letter-spacing: 5.75px;
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .heading-primary {
     font-size: 4.8rem;
     letter-spacing: 15px;
@@ -146,7 +168,7 @@ select {
   max-width: 37.5rem;
   margin: 0 auto;
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .form {
     max-width: 60rem;
   }
@@ -154,8 +176,8 @@ select {
 
 .form__list-item {
   font-size: 1.2rem;
-  border-bottom: 1px solid hsl(233, 11%, 84%);
-  color: hsl(235, 19%, 35%);
+  border-bottom: 1px solid var(--neutral-300);
+  color: var(--neutral-500);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -164,9 +186,9 @@ select {
 }
 .form__list-item .circle:checked ~ .form__list-text {
   text-decoration: line-through;
-  color: hsl(236, 9%, 61%);
+  color: var(--neutral-400);
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .form__list-item {
     font-size: 1.8rem;
   }
@@ -177,13 +199,13 @@ select {
 
 .form__list-item--end {
   font-size: 1.2rem;
-  color: hsl(236, 9%, 61%);
+  color: var(--neutral-400);
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-@media (min-width) {
+@media (min-width: 768px) {
   .form__list-item--end {
     font-size: 1.4rem;
   }
@@ -196,9 +218,9 @@ select {
 
 .form__list-box {
   display: flex;
-  background-color: hsl(0, 0%, 98%);
-  color: hsl(235, 19%, 35%);
-  box-shadow: 10px 10px 113px -24px rgba(0, 0, 0, 0.5);
+  background-color: var(--neutral-100);
+  color: var(--neutral-500);
+  box-shadow: 10px 10px 113px -24px rgba(0, 0, 0, 0.25);
   flex-direction: column;
   border-radius: 8px;
 }
@@ -208,15 +230,15 @@ select {
 }
 
 .form__list-item__box {
-  background-color: hsl(0, 0%, 98%);
-  box-shadow: 10px 8px 81px -10px rgba(0, 0, 0, 0.45);
+  background-color: var(--neutral-100);
+  box-shadow: 10px 8px 81px -10px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 8px;
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .form__list-item__box {
     flex-direction: row;
   }
@@ -239,9 +261,9 @@ select {
   align-items: center;
   padding: 0 2rem 0 2rem;
   justify-content: center;
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--neutral-100);
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .form__box {
     max-width: 56rem;
   }
@@ -253,11 +275,11 @@ select {
   flex: 1;
   background-color: transparent;
   max-width: 33.5rem;
-  color: hsl(235, 19%, 35%);
+  color: var(--neutral-500);
   padding: 2rem;
   font-size: 1.2rem;
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .form__input {
     max-width: 60rem;
     font-size: 1.8rem;
@@ -275,13 +297,13 @@ select {
   align-items: center;
   padding: 0 2rem 0 2rem;
   justify-content: center;
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--neutral-100);
   background-color: transparent;
   border-radius: 0;
-  border-top: 1px solid hsl(233, 11%, 84%);
-  border-bottom: 1px solid hsl(233, 11%, 84%);
+  border-top: 1px solid var(--neutral-300);
+  border-bottom: 1px solid var(--neutral-300);
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .form__state {
     border-top: 0;
     border-bottom: 0;
@@ -300,6 +322,10 @@ select {
   background-color: transparent;
 }
 
+.close-img {
+  filter: invert(50%);
+}
+
 .icon-mode {
   border: 0;
   cursor: pointer;
@@ -314,7 +340,7 @@ select {
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 100%;
-  border: 1px solid hsl(233, 11%, 84%);
+  border: 1px solid var(--neutral-300);
   position: relative;
   isolation: isolate;
 }
@@ -334,8 +360,8 @@ select {
 
 .form__state-btn {
   font-size: 1.2rem;
-  border-bottom: 1px solid hsl(233, 11%, 84%);
-  color: hsl(236, 9%, 61%);
+  border-bottom: 1px solid var(--neutral-300);
+  color: var(--neutral-400);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -346,9 +372,9 @@ select {
   cursor: pointer;
 }
 .form__state-btn:hover, .form__state-btn:focus {
-  color: hsl(235, 19%, 35%);
+  color: var(--neutral-500);
 }
-@media (min-width: 376px) {
+@media (min-width: 768px) {
   .form__state-btn {
     font-size: 1.4rem;
   }
@@ -356,8 +382,8 @@ select {
 
 .form__state-btn--clear {
   font-size: 1.2rem;
-  border-bottom: 1px solid hsl(233, 11%, 84%);
-  color: hsl(236, 9%, 61%);
+  border-bottom: 1px solid var(--neutral-300);
+  color: var(--neutral-400);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -367,50 +393,5 @@ select {
   cursor: pointer;
 }
 .form__state-btn--clear:hover, .form__state-btn--clear:focus {
-  color: hsl(235, 19%, 35%);
-}
-
-.dark__body-background {
-  background-color: hsl(235, 24%, 19%);
-}
-
-.dark__form {
-  background-color: hsl(237, 14%, 26%);
-}
-
-.dark__form__input {
-  color: hsl(236, 33%, 92%);
-}
-
-.dark__form__input::-moz-placeholder {
-  color: hsl(234, 11%, 52%);
-}
-
-.dark__form__input::placeholder {
-  color: hsl(234, 11%, 52%);
-}
-
-.dark__circle {
-  border: 1px solid hsl(233, 14%, 35%);
-}
-
-.dark__form__list-box {
-  background-color: hsl(237, 14%, 26%);
-  color: hsl(236, 33%, 92%);
-}
-
-.dark__form__list-item__box {
-  background-color: hsl(237, 14%, 26%);
-}
-
-.dark__form__list-item__box {
-  color: hsl(236, 33%, 92%);
-}
-
-.dark__form__close-btn {
-  background-color: hsl(237, 14%, 26%);
-}
-
-.dark__form__state-btn--clear:hover {
-  color: hsl(234, 39%, 85%);
+  color: var(--neutral-500);
 }/*# sourceMappingURL=style.css.map */

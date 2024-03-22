@@ -1,5 +1,6 @@
 "use strict";
 
+const html = document.querySelector("html");
 const formEl = document.querySelector(".form__box");
 const inputEl = document.querySelector(".form__input");
 const countEl = document.querySelector(".form__items__count");
@@ -8,8 +9,7 @@ const circleEl = document.querySelector(".circle");
 const formListItemBoxEl = document.querySelector(".form__list-item__box");
 
 const iconModeEl = document.querySelector(".icon-mode");
-const lightIconEl = document.querySelector(".icon-light");
-const darkIconEl = document.querySelector(".icon-dark");
+const iconToggleEl = document.querySelector(".icon-toggle-mode");
 const bodyEl = document.querySelector(".body");
 
 const containerFormEl = document.querySelector(".form__list-box");
@@ -122,14 +122,18 @@ const displayTasks = (tasksArray) => {
   });
 };
 
+const iconChange = (iconSrc) => {
+  iconToggleEl.src = iconSrc;
+};
+
 iconModeEl.addEventListener("click", function () {
-  lightIconEl.classList.toggle("icon-hide");
-  darkIconEl.classList.toggle("icon-show");
-  bodyEl.classList.toggle("dark__body-background");
-  formEl.classList.toggle("dark__form");
-  inputEl.classList.toggle("dark__form__input");
-  circleEl.classList.toggle("dark__circle");
-  containerFormEl.classList.toggle("dark__form__list-box");
-  formListItemBoxEl.classList.toggle("dark__form__list-item__box");
-  clearAllBtnEl.classList.toggle("dark__form__state-btn--clear");
+  const isDark = html.getAttribute("data-dark") === "false";
+
+  isDark
+    ? html.setAttribute("data-dark", "true")
+    : html.setAttribute("data-dark", "false");
+
+  isDark
+    ? iconChange("images/icon-sun.svg")
+    : iconChange("images/icon-moon.svg");
 });

@@ -25,12 +25,12 @@
 }
 
 .heading-primary {
-  color: $color-light-primary-gray-100;
+  color: hsl(0, 0%, 98%);
   font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 5.75px;
 
-  @media (min-width: 376px) {
+  @media (min-width: 768px) {
     font-size: 4.8rem;
     letter-spacing: 15px;
   }
@@ -40,6 +40,6 @@
   display: none;
 }
 
-.icon-show{
+.icon-show {
   display: block;
 }

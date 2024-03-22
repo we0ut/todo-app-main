@@ -1,6 +1,6 @@
 @mixin form-list-item-mix(
-  $color-gray-500: $color-light-primary-gray-500,
-  $color-gray-900: $color-light-primary-gray-900
+  $color-gray-500: var(--neutral-300),
+  $color-gray-900: var(--neutral-500)
 ) {
   font-size: $font-size--mobile;
   border-bottom: 1px solid $color-gray-500;
@@ -12,10 +12,7 @@
   justify-content: space-between;
 }
 
-@mixin form-box-mix(
-  $b-r: $border-radius,
-  $color-gray-100: $color-light-primary-gray-100
-) {
+@mixin form-box-mix($b-r: $border-radius, $color-gray-100: var(--neutral-100)) {
   display: flex;
   margin: 0 auto;
   border-radius: $border-radius;
