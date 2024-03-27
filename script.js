@@ -14,9 +14,9 @@ const bodyEl = document.querySelector(".body");
 
 const containerFormEl = document.querySelector(".form__list-box");
 const formBoxEl = document.querySelector(".form__list");
+const allBtnEl = document.querySelector(".all-btn");
 const activeBtnEl = document.querySelector(".active-btn");
 const completedBtnEl = document.querySelector(".completed-btn");
-const allBtnEl = document.querySelector(".all-btn");
 const clearAllBtnEl = document.querySelector(".form__state-btn--clear");
 
 const tasks = [];
