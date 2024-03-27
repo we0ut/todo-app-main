@@ -156,12 +156,8 @@ select {
   }
 }
 
-.icon-hide {
-  display: none;
-}
-
-.icon-show {
-  display: block;
+.active {
+  color: hsl(220, 98%, 61%) !important;
 }
 
 .form {

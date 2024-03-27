@@ -14,10 +14,11 @@ const bodyEl = document.querySelector(".body");
 
 const containerFormEl = document.querySelector(".form__list-box");
 const formBoxEl = document.querySelector(".form__list");
-const allBtnEl = document.querySelector(".all-btn");
-const activeBtnEl = document.querySelector(".active-btn");
-const completedBtnEl = document.querySelector(".completed-btn");
+const allBtnEl = document.querySelectorAll(".all-btn");
+const activeBtnEl = document.querySelectorAll(".active-btn");
+const completedBtnEl = document.querySelectorAll(".completed-btn");
 const clearAllBtnEl = document.querySelector(".form__state-btn--clear");
+const everyBtnEl = document.querySelectorAll(".form__state-btn");
 
 const tasks = [];
 
@@ -91,18 +92,45 @@ tasks.forEach((task) => {
   displayItem(containerFormEl, task);
 });
 
-activeBtnEl.addEventListener("click", () => {
-  const activeTasks = tasks.filter((task) => !task.isCompleted);
-  displayTasks(activeTasks);
+// activeBtnEl.addEventListener("click", () => {
+//   const activeTasks = tasks.filter((task) => !task.isCompleted);
+//   displayTasks(activeTasks);
+// });
+
+everyBtnEl.forEach((el) => {
+  el.addEventListener("click", () => {
+    document.querySelector(".active")?.classList.remove("active");
+    el.classList.add("active");
+  });
 });
 
-completedBtnEl.addEventListener("click", () => {
-  const completedTasks = tasks.filter((task) => task.isCompleted);
-  displayTasks(completedTasks);
+activeBtnEl.forEach((el) => {
+  el.addEventListener("click", () => {
+    const activeTasks = tasks.filter((task) => !task.isCompleted);
+    displayTasks(activeTasks);
+  });
 });
 
-allBtnEl.addEventListener("click", () => {
-  displayTasks(tasks);
+// completedBtnEl.addEventListener("click", () => {
+//   const completedTasks = tasks.filter((task) => task.isCompleted);
+//   displayTasks(completedTasks);
+// });
+
+completedBtnEl.forEach((el) => {
+  el.addEventListener("click", () => {
+    const completedTasks = tasks.filter((task) => task.isCompleted);
+    displayTasks(completedTasks);
+  });
+});
+
+// allBtnEl.addEventListener("click", () => {
+//   displayTasks(tasks);
+// });
+
+allBtnEl.forEach((el) => {
+  el.addEventListener("click", () => {
+    displayTasks(tasks);
+  });
 });
 
 clearAllBtnEl.addEventListener("click", () => {

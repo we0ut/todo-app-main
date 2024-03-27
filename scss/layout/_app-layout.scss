@@ -36,10 +36,6 @@
   }
 }
 
-.icon-hide {
-  display: none;
-}
-
-.icon-show {
-  display: block;
+.active {
+  color: $color-primary-blue !important;
 }
