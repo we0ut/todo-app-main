@@ -10,6 +10,8 @@ const formListItemBoxEl = document.querySelector(".form__list-item__box");
 
 const iconModeEl = document.querySelector(".icon-mode");
 const iconToggleEl = document.querySelector(".icon-toggle-mode");
+const mobileSourceEl = document.querySelector("#mobile-source");
+const desktopSourceEl = document.querySelector("#desktop-source");
 const bodyEl = document.querySelector(".body");
 
 const containerFormEl = document.querySelector(".form__list-box");
@@ -20,7 +22,7 @@ const completedBtnEl = document.querySelectorAll(".completed-btn");
 const clearAllBtnEl = document.querySelector(".form__state-btn--clear");
 const everyBtnEl = document.querySelectorAll(".form__state-btn");
 
-const tasks = [];
+let tasks = [];
 
 const changeCount = (el, arrLength) =>
   (el.textContent = arrLength
@@ -43,6 +45,7 @@ const closeBtn = (boxEl, taskId) => {
   closeEl.addEventListener("click", () => {
     boxEl.removeChild(closeEl.parentElement);
     removeTask(taskId);
+    setLocalStorage();
   });
 };
 
@@ -64,6 +67,21 @@ const displayItem = (boxEl, task) => {
   closeBtn(boxEl, task.id);
 };
 
+const setLocalStorage = () => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+const getLocalStorage = () => {
+  const data = JSON.parse(localStorage.getItem("tasks"));
+
+  if (!data) return;
+
+  tasks = data;
+  tasks.forEach((task) => {
+    displayItem(containerFormEl, task);
+  });
+};
+
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -76,6 +94,7 @@ formEl.addEventListener("submit", (e) => {
       isCompleted: circleCheckEl.checked,
     };
     tasks.push(formTask);
+    setLocalStorage();
     inputEl.value = "";
     displayItem(containerFormEl, formTask);
   }
@@ -86,16 +105,8 @@ containerFormEl.addEventListener("change", (e) => {
   const taskId = checkbox.id.split("-")[1];
   const task = tasks.find((task) => task.id === taskId);
   task.isCompleted = checkbox.checked;
+  setLocalStorage();
 });
-
-tasks.forEach((task) => {
-  displayItem(containerFormEl, task);
-});
-
-// activeBtnEl.addEventListener("click", () => {
-//   const activeTasks = tasks.filter((task) => !task.isCompleted);
-//   displayTasks(activeTasks);
-// });
 
 everyBtnEl.forEach((el) => {
   el.addEventListener("click", () => {
@@ -111,21 +122,12 @@ activeBtnEl.forEach((el) => {
   });
 });
 
-// completedBtnEl.addEventListener("click", () => {
-//   const completedTasks = tasks.filter((task) => task.isCompleted);
-//   displayTasks(completedTasks);
-// });
-
 completedBtnEl.forEach((el) => {
   el.addEventListener("click", () => {
     const completedTasks = tasks.filter((task) => task.isCompleted);
     displayTasks(completedTasks);
   });
 });
-
-// allBtnEl.addEventListener("click", () => {
-//   displayTasks(tasks);
-// });
 
 allBtnEl.forEach((el) => {
   el.addEventListener("click", () => {
@@ -135,12 +137,13 @@ allBtnEl.forEach((el) => {
 
 clearAllBtnEl.addEventListener("click", () => {
   const incompleteTasks = tasks.filter((task) => !task.isCompleted);
-  tasks.splice(0, tasks.length, ...incompleteTasks);
+  tasks = incompleteTasks;
   containerFormEl.innerHTML = "";
   tasks.forEach((task) => {
     displayItem(containerFormEl, task);
   });
   changeCount(countEl, incompleteTasks.length);
+  setLocalStorage();
 });
 
 const displayTasks = (tasksArray) => {
@@ -154,6 +157,11 @@ const iconChange = (iconSrc) => {
   iconToggleEl.src = iconSrc;
 };
 
+const backgroundImageChange = (desktopSrc, mobileSrc) => {
+  desktopSourceEl.src = desktopSrc;
+  mobileSourceEl.srcset = mobileSrc;
+};
+
 iconModeEl.addEventListener("click", function () {
   const isDark = html.getAttribute("data-dark") === "false";
 
@@ -164,4 +172,18 @@ iconModeEl.addEventListener("click", function () {
   isDark
     ? iconChange("images/icon-sun.svg")
     : iconChange("images/icon-moon.svg");
+
+  if (desktopSourceEl.src.includes("bg-desktop-light")) {
+    backgroundImageChange(
+      "/images/bg-desktop-dark.jpg",
+      "/images/bg-mobile-dark.jpg"
+    );
+  } else {
+    backgroundImageChange(
+      "/images/bg-desktop-light.jpg",
+      "/images/bg-mobile-light.jpg"
+    );
+  }
 });
+
+getLocalStorage();
