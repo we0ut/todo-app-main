@@ -6,7 +6,6 @@ const inputEl = document.querySelector(".form__input");
 const countEl = document.querySelector(".form__items__count");
 const circleCheckEl = document.querySelector("#circle-check");
 const circleEl = document.querySelector(".circle");
-const formListItemBoxEl = document.querySelector(".form__list-item__box");
 
 const iconModeEl = document.querySelector(".icon-mode");
 const iconToggleEl = document.querySelector(".icon-toggle-mode");
@@ -59,7 +58,7 @@ const displayItem = (boxEl, task) => {
         <p class="form__list-text">${task.content}</p>
       </div>
       <button class="close-btn" id="delete-${task.id}">
-        <img src="/images/icon-cross.svg" class="close-img" alt="Close button" />
+        <img src="images/icon-cross.svg" class="close-img" alt="Close button" />
       </button>
     </li>`;
   changeCount(countEl, tasks.length);
@@ -175,13 +174,13 @@ iconModeEl.addEventListener("click", function () {
 
   if (desktopSourceEl.src.includes("bg-desktop-light")) {
     backgroundImageChange(
-      "/images/bg-desktop-dark.jpg",
-      "/images/bg-mobile-dark.jpg"
+      "images/bg-desktop-dark.jpg",
+      "images/bg-mobile-dark.jpg"
     );
   } else {
     backgroundImageChange(
-      "/images/bg-desktop-light.jpg",
-      "/images/bg-mobile-light.jpg"
+      "images/bg-desktop-light.jpg",
+      "images/bg-mobile-light.jpg"
     );
   }
 });
